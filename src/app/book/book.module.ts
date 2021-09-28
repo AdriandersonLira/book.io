@@ -1,36 +1,37 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BookModule } from './book/book.module';
-import { LayoutModule } from './layout/layout.module';
+
+import { AddBookComponent } from './add-book/add-book.component';
+import { SeeBookComponent } from './see-book/see-book.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AddBookComponent,
+    SeeBookComponent
+  ],
+  exports: [
+    AddBookComponent,
+    SeeBookComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
+    CommonModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    BookModule,
-    LayoutModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class BookModule { }

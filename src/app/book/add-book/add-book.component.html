@@ -1,0 +1,37 @@
+<mat-card class="add-book-card">
+  <mat-card-header>
+    <mat-card-title>Adicionar Livro</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field appearance="fill" class="simple-mat-form">
+      <mat-label>Título:</mat-label>
+      <input matInput [(ngModel)]="book.title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="simple-mat-form">
+      <mat-label>Subtítulo:</mat-label>
+      <input matInput [(ngModel)]="book.caption">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="simple-mat-form">
+      <mat-label>Descrição:</mat-label>
+      <input matInput [(ngModel)]="book.description">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="simple-mat-form">
+      <mat-label>Autor:</mat-label>
+      <input matInput [(ngModel)]="book.author">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="simple-mat-form">
+      <mat-label>Páginas:</mat-label>
+      <input matInput [(ngModel)]="book.pages">
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-footer class="simple-button">
+    <button mat-raised-button color="primary" (click)="handleBookInsertion()">Enviar</button>
+  </mat-card-footer>
+</mat-card>
+
+
+
