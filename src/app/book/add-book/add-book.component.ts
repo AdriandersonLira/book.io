@@ -9,18 +9,18 @@ import { BookService } from '../../shared/services/book.service';
 })
 export class AddBookComponent implements OnInit {
   book: Book;
-  books: Array<Book>;
 
   constructor(private bookService: BookService) {
     this.book = new Book();
-    this.books = bookService.fetchAll();
   }
 
   ngOnInit(): void {
   }
 
   handleBookInsertion(): void {
-    this.bookService.insert(this.book);
+    this.bookService.insert(this.book).subscribe(
+      book => console.log(book)
+    );
     this.book = new Book();
   }
 }

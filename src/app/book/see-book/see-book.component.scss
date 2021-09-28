@@ -1,3 +1,9 @@
+.see-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .see-book-card {
   width: 80rem;
   background-color: rgb(94, 99, 99);

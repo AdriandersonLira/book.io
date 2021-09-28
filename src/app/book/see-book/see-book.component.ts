@@ -8,15 +8,16 @@ import Book from '../../shared/model/book';
   styleUrls: ['./see-book.component.scss']
 })
 export class SeeBookComponent implements OnInit {
-
   books: Array<Book>;
 
   constructor(private bookService: BookService) {
-    this.books = this.bookService.fetchAll();
+    this.books = [];
   }
 
   ngOnInit(): void {
-    this.books = this.bookService.fetchAll();
+    this.bookService.fetchAll().subscribe(
+      books => this.books = books
+    );
   }
 
   // handleEditing(book: Book) {}

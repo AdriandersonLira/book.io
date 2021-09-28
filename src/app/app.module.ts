@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { LayoutModule } from './layout/layout.module';
     MatIconModule,
     BookModule,
     LayoutModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

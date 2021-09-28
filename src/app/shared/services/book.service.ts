@@ -1,22 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import Book from '../model/book';
-import { Books } from '../model/Books';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  books: Array<Book>;
+  URL_BOOKS = 'http://localhost:3000/books'
 
-  constructor() {
-    this.books = Books;
+  constructor(private httpClient: HttpClient) {
   }
 
-  fetchAll(): Array<Book> {
-    return this.books;
+  fetchAll(): Observable<Book[]> {
+    return this.httpClient.get<Book[]>(this.URL_BOOKS);
   }
 
-  insert(book: Book): void {
-    this.books.push(book);
+  insert(book: Book): Observable<Book> {
+    return this.httpClient.post<Book>(this.URL_BOOKS, book);
   }
 }
