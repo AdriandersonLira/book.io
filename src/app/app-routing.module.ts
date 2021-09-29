@@ -5,7 +5,7 @@ import { SeeBookComponent } from './book/see-book/see-book.component';
 
 const routes: Routes = [
   {
-    path: 'add-book/:id',
+    path: 'edit-book/:id',
     component: AddBookComponent
   },
   {

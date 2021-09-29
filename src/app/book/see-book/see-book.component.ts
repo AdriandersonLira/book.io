@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../shared/services/book.service';
 import Book from '../../shared/model/book';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-see-book',
@@ -10,7 +11,7 @@ import Book from '../../shared/model/book';
 export class SeeBookComponent implements OnInit {
   books: Array<Book>;
 
-  constructor(private bookService: BookService) {
+  constructor(private bookService: BookService, private router: Router) {
     this.books = [];
   }
 
@@ -20,14 +21,19 @@ export class SeeBookComponent implements OnInit {
     );
   }
 
-  // handleEditing(book: Book) {}
-
-  handleDeleting(book: Book) {
-    const bookIndexToRemove = this.books.findIndex(b => b.title === book.title);
-
-    if (bookIndexToRemove > -1) {
-      this.books.splice(bookIndexToRemove, 1);
-    }
+  handleEditing(book: Book) {
+    this.router.navigate(['edit-book', book.id]);
   }
 
+  handleDeleting(book: Book) {
+    this.bookService.delete(book).subscribe(
+      response => {
+        const bookIndexToRemove = this.books.findIndex(b => b.id === book.id);
+
+        if (bookIndexToRemove > -1) {
+          this.books.splice(bookIndexToRemove, 1);
+        }
+      }
+    );
+  }
 }

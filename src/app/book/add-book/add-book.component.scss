@@ -5,17 +5,34 @@
   align-items: center;
 }
 
-.add-book-card {
+mat-card {
   max-width: 130rem;
   background-color: rgb(94, 99, 99);
   margin-top: 1.3rem;
   padding: 4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.simple-mat-form {
-  margin-left: .5rem;
+mat-card-header {
+  margin-bottom: 3rem;
 }
 
-.simple-button {
-  margin-left: 1.5rem;
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 72rem;
+  margin-left: 0;
+}
+
+.group mat-form-field {
+  width: 35rem;
+}
+
+.group mat-form-field:nth-child(2) {
+  margin-left: 2rem;
 }

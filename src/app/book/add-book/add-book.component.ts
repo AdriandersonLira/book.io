@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import Book from '../../shared/model/book';
 import { BookService } from '../../shared/services/book.service';
 
@@ -9,18 +10,36 @@ import { BookService } from '../../shared/services/book.service';
 })
 export class AddBookComponent implements OnInit {
   book: Book;
+  title = 'Adicionar';
 
-  constructor(private bookService: BookService) {
+  constructor(
+    private bookService: BookService,
+    private currentRoute: ActivatedRoute,
+    private router: Router
+  ) {
     this.book = new Book();
+    if (this.currentRoute.snapshot.paramMap.has('id')) {
+      this.title = 'Editar';
+
+      const id = Number(this.currentRoute.snapshot.paramMap.get('id'));
+
+      this.bookService.fetch(id).subscribe(
+        response => this.book = response
+      );
+    }
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   handleBookInsertion(): void {
-    this.bookService.insert(this.book).subscribe(
-      book => console.log(book)
-    );
-    this.book = new Book();
+    if (this.book.id) {
+      this.bookService.replace(this.book).subscribe(
+        book => this.router.navigate(['see-book'])
+      )
+    } else {
+      this.bookService.insert(this.book).subscribe(
+        book => this.router.navigate(['see-book'])
+      );
+    }
   }
 }

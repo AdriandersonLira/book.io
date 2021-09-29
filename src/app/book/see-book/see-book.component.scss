@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100%;
 }
 
 .see-book-card {
   width: 80rem;
   background-color: rgb(94, 99, 99);
-  margin-top: 1.3rem;
+  margin-top: 1.4rem;
   padding: 4rem;
 }
 
@@ -34,4 +36,8 @@
 
 .description {
   margin: 0 2.5rem 0 2rem;
+}
+
+mat-card-actions {
+  margin-left: 2rem;
 }

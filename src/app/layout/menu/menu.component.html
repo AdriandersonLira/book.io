@@ -1,15 +1,8 @@
 <div class="menu-background">
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button [routerLink]="['/add-book']">
+    <mat-icon>add</mat-icon>
   </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item [routerLink]="['/add-book']">
-      <mat-icon>add</mat-icon>
-      <span>Add Book</span>
-    </button>
-    <button mat-menu-item [routerLink]="['/see-book']">
-      <mat-icon>list</mat-icon>
-      <span>List Book</span>
-    </button>
-  </mat-menu>
+  <button mat-icon-button [routerLink]="['/see-book']">
+    <mat-icon>list</mat-icon>
+  </button>
 </div>

@@ -1,7 +1,11 @@
 .menu-background {
   position: fixed;
   height: 100%;
-  width: 4.3rem;
+  width: 7rem;
   background-color: rgb(94, 99, 99);
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

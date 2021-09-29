@@ -1,36 +1,60 @@
 <div class="add-book">
-  <mat-card class="add-book-card">
+  <mat-card>
     <mat-card-header>
-      <mat-card-title>Adicionar Livro</mat-card-title>
+      <mat-card-title>{{title}} livro</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-form-field appearance="fill" class="simple-mat-form">
-        <mat-label>Título:</mat-label>
-        <input matInput [(ngModel)]="book.title">
-      </mat-form-field>
+      <div class="group">
+        <mat-form-field appearance="fill">
+          <mat-label>Título:</mat-label>
+          <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="book.title">
+          </textarea>
+        </mat-form-field>
 
-      <mat-form-field appearance="fill" class="simple-mat-form">
-        <mat-label>Subtítulo:</mat-label>
-        <input matInput [(ngModel)]="book.caption">
-      </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Subtítulo:</mat-label>
+          <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="book.caption">
+          </textarea>
+        </mat-form-field>
+      </div>
 
-      <mat-form-field appearance="fill" class="simple-mat-form">
+      <mat-form-field appearance="fill">
         <mat-label>Descrição:</mat-label>
-        <input matInput [(ngModel)]="book.description">
+        <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="book.description">
+        </textarea>
       </mat-form-field>
 
-      <mat-form-field appearance="fill" class="simple-mat-form">
-        <mat-label>Autor:</mat-label>
-        <input matInput [(ngModel)]="book.author">
-      </mat-form-field>
+      <div class="group">
+        <mat-form-field appearance="fill">
+          <mat-label>Autor:</mat-label>
+          <input matInput [(ngModel)]="book.author">
+        </mat-form-field>
 
-      <mat-form-field appearance="fill" class="simple-mat-form">
-        <mat-label>Páginas:</mat-label>
-        <input matInput [(ngModel)]="book.pages">
-      </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Páginas:</mat-label>
+          <input type="number" matInput [(ngModel)]="book.pages">
+        </mat-form-field>
+      </div>
     </mat-card-content>
     <mat-card-footer class="simple-button">
-      <button mat-raised-button color="primary" (click)="handleBookInsertion()">Enviar</button>
+      <button mat-raised-button color="primary" (click)="handleBookInsertion()">
+        Enviar
+      </button>
     </mat-card-footer>
   </mat-card>
 </div>

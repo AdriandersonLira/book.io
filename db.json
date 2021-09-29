@@ -4,33 +4,17 @@
       "id": 1,
       "title": "Os segredos da mente milionária",
       "caption": "Aprenda a enriquecer mudando seus conceitos sobre o dinheiro",
-      "description": "A maioria das pessoas associa dinheiro a prazer imediato. Para mim, ele deve ser acumuladoo para propocionar liberdade.",
+      "description": "A maioria das pessoas associa dinheiro a prazer imediato. Para mim, ele deve ser acumulado para proporcionar liberdade. ",
       "author": "T. Harv Eker",
-      "pages": 175
+      "pages": "174"
     },
     {
       "id": 2,
       "title": "Cinco segredos da riqueza",
       "caption": "Que 96% das pessoas não sabem",
-      "description": "Descubra os príncipios que podem mudar radicalmente sua situação financeira e o futuro da sua família",
+      "description": "Descubra os princípios que podem mudar radicalmente sua situação financeira e o futuro da sua família",
       "author": "Craig Hill",
       "pages": 142
-    },
-    {
-      "title": "sdasd",
-      "caption": "asdasda",
-      "description": "sdasdasd",
-      "author": "asdas",
-      "pages": "123",
-      "id": 3
-    },
-    {
-      "title": "123123123",
-      "caption": "123123123",
-      "description": "123123123",
-      "author": "23",
-      "pages": "123",
-      "id": 4
     }
   ]
 }
