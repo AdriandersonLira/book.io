@@ -8,11 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
-
 import { AddBookComponent } from './add-book/add-book.component';
 import { SeeBookComponent } from './see-book/see-book.component';
-
-
 
 @NgModule({
   declarations: [
