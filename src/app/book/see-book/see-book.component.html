@@ -3,7 +3,7 @@
     <mat-card-header>
       <mat-card-title class="title-mat-card">
         <mat-icon class="icon">book</mat-icon>
-        {{book.title}}
+        {{book.title | titlecase}}
       </mat-card-title>
       <mat-card-subtitle class="sub-title" *ngIf="book.caption">
         {{book.caption}}
@@ -12,7 +12,7 @@
     <mat-card-content>
       <div class="content-1">
         <span class="caption" *ngIf="book.author">
-          Autor: {{book.author}}
+          Autor: {{book.author  | titlecase}}
         </span>
         <span class="pages" *ngIf="book.pages">
           Páginas: {{book.pages}}

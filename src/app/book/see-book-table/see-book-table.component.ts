@@ -12,7 +12,7 @@ import Book from '../../shared/model/book';
 })
 export class SeeBookTableComponent implements OnInit {
   books: MatTableDataSource<Book>;
-  displayedColumns: string[] = ['id', 'title', 'author', 'pages'];
+  displayedColumns: string[] = ['id', 'title', 'author', 'pages', 'options'];
   clickedRows = new Set<Book>();
 
   constructor(private bookService: BookService, private router: Router) {
@@ -27,6 +27,23 @@ export class SeeBookTableComponent implements OnInit {
 
   filter(value: string): void {
     this.books.filter = value.trim().toLowerCase();
+  }
+
+  handleEditing(book: Book) {
+    this.router.navigate(['edit-book', book.id]);
+  }
+
+  handleDeleting(book: Book) {
+    this.bookService.delete(book).subscribe(
+      response => {
+        const bookIndexToRemove = this.books.data.findIndex(b => b.id === book.id);
+
+        if (bookIndexToRemove > -1) {
+          this.books.data.splice(bookIndexToRemove, 1);
+          this.books = new MatTableDataSource(this.books.data);
+        }
+      }
+    );
   }
 
 }
