@@ -7,12 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookModule } from './book/book.module';
 import { LayoutModule } from './layout/layout.module';
+import { InterceptorsModule } from './interceptors/interceptors.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { LayoutModule } from './layout/layout.module';
     BookModule,
     LayoutModule,
     HttpClientModule,
+    MatSnackBarModule,
+    InterceptorsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

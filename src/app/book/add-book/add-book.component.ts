@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NotificationService } from '../../shared/services/notification.service';
 import Book from '../../shared/model/book';
 import { BookService } from '../../shared/services/book.service';
 
@@ -15,7 +17,8 @@ export class AddBookComponent implements OnInit {
   constructor(
     private bookService: BookService,
     private currentRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private notificationService: NotificationService
   ) {
     this.book = new Book();
     if (this.currentRoute.snapshot.paramMap.has('id')) {
@@ -34,11 +37,17 @@ export class AddBookComponent implements OnInit {
   handleBookInsertion(): void {
     if (this.book.id) {
       this.bookService.replace(this.book).subscribe(
-        book => this.router.navigate(['see-book'])
+        book => {
+          this.notificationService.success(`Livro ${book.title} atualizado!`);
+          this.router.navigate(['see-book']);
+        }
       )
     } else {
       this.bookService.insert(this.book).subscribe(
-        book => this.router.navigate(['see-book'])
+        book => {
+          this.notificationService.success(`Livro ${book.title} cadastrado!`);
+          this.router.navigate(['see-book']);
+        }
       );
     }
   }

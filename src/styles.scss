@@ -26,3 +26,19 @@ body, input, button, textarea, select {
 button, a {
   cursor: pointer;
 }
+
+snack-bar-container.success {
+  background-color: lightgreen;
+}
+
+snack-bar-container.error {
+  background-color: lightcoral;
+}
+
+snack-bar-container.warning {
+  background-color: lightyellow;
+}
+
+snack-bar-container.error {
+  background-color: lightblue;
+}
