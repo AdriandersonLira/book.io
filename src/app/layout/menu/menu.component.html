@@ -1,8 +1,11 @@
 <div class="menu-background">
-  <button mat-icon-button [routerLink]="['/add-book']">
+  <button title="Cadastrar livro" mat-icon-button [routerLink]="['/add-book']">
     <mat-icon>add</mat-icon>
   </button>
-  <button mat-icon-button [routerLink]="['/see-book']">
+  <button title="Listagem dos livros"mat-icon-button [routerLink]="['/see-book']">
     <mat-icon>list</mat-icon>
+  </button>
+  <button title="Listagem dos livros por tabela" mat-icon-button [routerLink]="['/see-book-table']">
+    <mat-icon>table_chart</mat-icon>
   </button>
 </div>

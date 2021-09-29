@@ -1,0 +1,26 @@
+mat-form-field {
+  margin: 2rem 0 2rem 5rem;
+  width: 30rem;
+}
+
+.container {
+  margin-left: 7rem;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

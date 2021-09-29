@@ -7,14 +7,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 import { AddBookComponent } from './add-book/add-book.component';
 import { SeeBookComponent } from './see-book/see-book.component';
+import { SeeBookTableComponent } from './see-book-table/see-book-table.component';
 
 @NgModule({
   declarations: [
     AddBookComponent,
-    SeeBookComponent
+    SeeBookComponent,
+    SeeBookTableComponent
   ],
   exports: [
     AddBookComponent,
@@ -29,6 +32,7 @@ import { SeeBookComponent } from './see-book/see-book.component';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    MatTableModule
   ]
 })
 export class BookModule { }

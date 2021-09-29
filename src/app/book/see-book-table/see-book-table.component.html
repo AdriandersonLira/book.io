@@ -1,0 +1,37 @@
+<nav class="container">
+  <mat-form-field>
+    <mat-label>Filtro</mat-label>
+    <input type="text" matInput placeholder="Filtre por qualquer valor" (keyup)="filter(inputFilter.value)" #inputFilter>
+  </mat-form-field>
+
+
+  <table mat-table [dataSource]="books">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Título</th>
+      <td mat-cell *matCellDef="let element">{{element.title}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="author">
+      <th mat-header-cell *matHeaderCellDef>Autor</th>
+      <td mat-cell *matCellDef="let element">{{element.author}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="pages">
+      <th mat-header-cell *matHeaderCellDef>Páginas</th>
+      <td mat-cell *matCellDef="let element">{{element.pages}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      (click)="clickedRows.add(row)"
+      [class.demo-row-is-clicked]="clickedRows.has(row)"
+      *matRowDef="let row; columns: displayedColumns;"
+  ></tr>
+  </table>
+</nav>
