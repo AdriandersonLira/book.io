@@ -13,7 +13,7 @@ export class NotificationService {
   }
 
   warn(message: string): void {
-    this.openSnackBar(message, ['warn']);
+    this.openSnackBar(message, ['warning']);
   }
 
   info(message: string): void {
