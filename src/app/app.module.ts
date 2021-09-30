@@ -8,7 +8,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {FirestoreModule} from './firestore/firestore.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +35,6 @@ import { InterceptorsModule } from './interceptors/interceptors.module';
     HttpClientModule,
     MatSnackBarModule,
     InterceptorsModule,
-    FirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
